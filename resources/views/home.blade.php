@@ -8,27 +8,24 @@
 </head>
 <body>
 
+    <a href="{{ route('about')}}"> vai alla sezione about </a> <br>
+    <a href="{{route('teacher')}}">Vai alla sezione teachers</a>
+
     <h1>IO SONO LA HOMEPAGE</h1>
 
-    <h2>Nome : {{$name}}</h2>
-    <h2>Cognome : {{$surname}}</h2>
-
-    <ul>
-        @forelse ($courses as $course)
-
-        <li>
-            {{ $course }}
-        </li>
-        
-        
-        
-    @empty
-
-    <h3> NESSUN CORSO TROVATO PER {{ $name }} {{ $surname}}</h3>
-        
-    @endforelse
-
-    </ul>
+ <ul>
+     @forelse ($list_of_teachers as $teacher)
+     <li>
+         {{ $teacher }}
+     </li>
+         
+     @empty
+     <h3>
+         Non ci sono insegnanti
+     </h3>
+         
+     @endforelse
+ </ul>
 
     
 

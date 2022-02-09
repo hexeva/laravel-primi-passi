@@ -15,6 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+    $list = [
+        'list_of_teachers'=>['Mario Rossi','Enrico Verdi','Marta Bianchi']
+    ];
+   
+
+    return view('home',$list);
+})->name('homepage');
+
+
+Route::get('/about-courses', function () {
+
+
+    return view('about');
+})->name('about');
+
+Route::get('/about-teachers', function () {
+
     $teachers = [
         'name' => 'Mario',
         'surname' => 'Rossi',
@@ -25,5 +42,7 @@ Route::get('/', function () {
         ]
     ];
 
-    return view('home',$teachers);
-});
+
+    return view('teachers',$teachers);
+})->name('teacher');
+
